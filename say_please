@@ -12,5 +12,3 @@ say_please ()
         $cmd;
     done
 }
-
-say_please
