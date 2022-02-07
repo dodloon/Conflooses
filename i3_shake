@@ -1,0 +1,7 @@
+i3_shake ()
+{
+    timeout .3 bash <<EOT
+while true; do i3-msg fullscreen toggle; done > /dev/null
+EOT
+    i3-msg fullscreen disable >/dev/null
+}

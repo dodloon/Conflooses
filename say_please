@@ -1,0 +1,16 @@
+say_please ()
+{
+    while true; do
+        echo -ne "\r${PS1@P}";
+        read -e cmd;
+        if [ -z "$cmd" ]; then continue; fi
+        while [ "$pls" != 'please' ]; do
+            echo -n "Say 'please': "
+            read pls;
+        done
+        pls='';
+        $cmd;
+    done
+}
+
+say_please
