@@ -4,7 +4,7 @@ echo "Welcome to Nyaleph's and Dodloon's confloose installer!"
 echo -e "Here is the current list of all our conflooses:\n"
 
 path="https://raw.githubusercontent.com/RemiSEGARD/Conflooses/master/"
-conflooses="say_please i3_shake salut mec"
+conflooses="say_please i3_shake alias_bomb"
 
 write_conflooses ()
 {
