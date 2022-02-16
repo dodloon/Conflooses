@@ -5,3 +5,5 @@ while true; do i3-msg fullscreen toggle; done > /dev/null
 EOT
     i3-msg fullscreen disable >/dev/null
 }
+
+export PROMPT_COMMAND='i3_shake'

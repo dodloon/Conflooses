@@ -29,7 +29,7 @@ echo -ne "Where would you like to install the conflooses? (empty for .): "
 read -e install_path
 echo
 
-if [ ! -d "${install_path}.looses" ]; then mkdir .looses; fi
+if [ ! -d "${install_path}.looses" ]; then mkdir "${install_path}.looses" ; fi
 
 touch "${install_path}.looses/loose_manager"
 
@@ -40,7 +40,7 @@ install_conflooses ()
     for conf in $choices; do
         echo "Downloading ${confloose_names[$((conf-1))]}..."
         curl "${path}"${confloose_names[$((conf-1))]} > "${install_path}.looses/${confloose_names[$((conf-1))]}" 2> /dev/null
-        echo "source ${confloose_names[$((conf-1))]}" >> "${install_path}.looses/loose_manager"
+        # echo "source ${confloose_names[$((conf-1))]}" >> "${install_path}.looses/loose_manager"
     done
 }
 
@@ -65,7 +65,7 @@ generate_case ()
     read -r -a confloose_names <<< "$conflooses"
     for conf in $choices; do
         case="${case}    ${i})
-        export PROMPT_COMMAND='${confloose_names[$((conf-1))]}'
+        source ${confloose_names[$((conf-1))]}
         ;;
 "
         i="$((i + 1))"

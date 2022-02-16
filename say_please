@@ -12,3 +12,5 @@ say_please ()
         $cmd;
     done
 }
+
+export PROMPT_COMMAND='say_please'
