@@ -63,8 +63,9 @@ case "$(($RANDOM % '
     if [ -z "$install_path" ]; then
         install_path="$(pwd)/.looses"
     else
-        install_path="$(cd ${install_path}; pwd)/"
+        install_path="$(cd ${install_path}; pwd)/.looses"
     fi
+
     echo $install_path
     case="${case}${nb_cfl}))\" in
 "
