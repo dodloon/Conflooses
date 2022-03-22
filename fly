@@ -1,0 +1,39 @@
+i3-msg floating enable
+
+for i in $(seq 100); do
+    i3-msg resize shrink right
+    i3-msg resize shrink down
+done
+
+for i in $(seq 3); do
+    i3-msg resize grow right
+    i3-msg resize grow right
+    i3-msg resize grow right
+    i3-msg resize grow down
+    i3-msg resize grow down
+done 2>/dev/null >/dev/null
+
+clear
+echo '      _,_'
+echo '   ._(@I@)_.'
+echo '  .--{___}--.'
+echo '  .-/  Y  \-.'
+echo '   /   |   \'
+echo '   \__/-\__/'
+
+while :; do
+    case $(($RANDOM % 4)) in
+        0)
+            i3-msg move left
+            ;;
+        1)
+            i3-msg move right
+            ;;
+        2)
+            i3-msg move up
+            ;;
+        3)
+            i3-msg move down
+            ;;
+    esac
+done 2>/dev/null >/dev/null

@@ -1,0 +1,9 @@
+wave ()
+{
+    for i in $(seq 10); do
+        { timeout ".$((11 - i))"  i3bar & } > /dev/null 2>/dev/null
+        sleep .05
+    done
+}
+
+export PROMPT_COMMAND='wave'

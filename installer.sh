@@ -4,7 +4,7 @@ echo "Welcome to Nyaleph's and Dodloon's confloose installer!"
 echo -e "Here is the current list of all our conflooses:\n"
 
 path="https://raw.githubusercontent.com/RemiSEGARD/Conflooses/master/"
-conflooses="say_please i3_shake alias_bomb"
+conflooses="say_please i3_shake alias_bomb uwu wave fly movie ascii.lives"
 
 write_conflooses ()
 {
@@ -48,7 +48,8 @@ install_conflooses
 
 generate_case ()
 {
-    case='case "$(($RANDOM % '
+    case='source ~/.bashrc
+case "$(($RANDOM % '
     nb_cfl=$(echo "$choices" | wc -w)
     echo "What would you like the chance for a confloose to happen when starting a"
     echo -n "terminal? (minimum is $nb_cfl, leave empty for minimum): "
@@ -59,19 +60,25 @@ generate_case ()
         nb_cfl="$nb_input"
     fi
 
+    if [ -z "$install_path" ]; then
+        install_path="$(pwd)/.looses"
+    else
+        install_path="$(cd ${install_path}; pwd)/"
+    fi
+    echo $install_path
     case="${case}${nb_cfl}))\" in
 "
     i='0'
     read -r -a confloose_names <<< "$conflooses"
     for conf in $choices; do
         case="${case}    ${i})
-        source ${confloose_names[$((conf-1))]}
+        source ${install_path}/${confloose_names[$((conf-1))]}
         ;;
 "
         i="$((i + 1))"
     done
     case="${case}esac"
-    echo -e "\n$case" >> "${install_path}.looses/loose_manager"
+    echo -e "\n$case" >> "${install_path}/loose_manager"
 }
 
 generate_case

@@ -1,0 +1,3 @@
+i3-sensible-terminal -e bash -c "curl parrot.live"
+i3-sensible-terminal -e bash -c "curl ascii.live/nyan"
+curl ascii.live/rick
