@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Welcome to Nyaleph's and Dodloon's confloose installer!"
+echo "Welcome to Dodloon's confloose installer!"
 echo -e "Here is the current list of all our conflooses:\n"
 
 path="https://raw.githubusercontent.com/RemiSEGARD/Conflooses/master/"
