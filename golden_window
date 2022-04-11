@@ -1,0 +1,8 @@
+for i in $(seq 5); do
+    i3-msg split h
+    i3-sensible-terminal &
+    sleep .2
+    i3-msg split v
+    i3-sensible-terminal &
+    sleep .2
+done >/dev/null
