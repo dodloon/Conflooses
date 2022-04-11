@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Welcome to Dodloon's confloose installer!"
-echo -e "Here is the current list of all our conflooses:\n"
+echo -e "Here is the current list of all the conflooses:\n"
 
 path="https://raw.githubusercontent.com/RemiSEGARD/Conflooses/master/"
 conflooses="say_please i3_shake alias_bomb uwu wave fly movie ascii.lives golden_window"
